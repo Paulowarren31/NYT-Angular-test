@@ -1,0 +1,23 @@
+<h2 style="text-align:center" class="mb-4"> New York Times Posts </h2>
+<div class="container card">
+    <span *ngIf="posts == undefined">Loading</span>
+    <ul class="list-unstyled">
+        <div *ngFor="let post of posts"  class="media my-2">
+            <img class="d-flex mr-3" 
+                src="{{post.imgUrl}}" 
+                style="width: 190px; height: 127px;"
+                alt="no image">
+            <hr>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1 link" (click)="onClickPost($event, post)">{{post.title}}
+                </h5>
+                <small><span class="text-info">{{post.date}}</span> - {{post.author}}</small>
+                <p class="pt-3">
+                {{post.abs}}
+                </p>
+                <hr>
+            </div>
+
+        </div>
+    </ul>
+</div>
